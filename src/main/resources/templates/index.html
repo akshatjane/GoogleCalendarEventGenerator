@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Shared Pro Task</title>
+<script>
+function clicked()
+{
+alert("Invitation has been sent to all the event Attendees.");
+}
+</script>
+</head>
+<body>
+	<div>
+	<center>
+		<h1>Shared Pro Task </h1>
+		<form th:action="@{/createEvent}"  method="post">
+			<b>Summary Of Event :</b><br> 
+			<textarea type = "text" id="summary" cols="70" rows="1" name="summary"> </textarea><br> 
+			<b>Description Of Event :</b><br>
+			<textarea type = "text" id ="description" cols="70" rows="1" name="description"> </textarea><br> 
+			<b>Location :</b><br>
+			<textarea type = "text"  id="location" cols="70" rows="1" name="location"></textarea><br><br> 
+			<b>Start Date : </h3></b><input id="startDate" type = "datetime-local" name="startDate"></input><br><br> 
+			<b>End Date  : </h3></b><input id="endDate" type="datetime-local" name="endDate"></input><br>
+			<h3><b>Enter Email Address of Event Attendees , Seprated by Comma</b></h3>
+			<textarea name="emails" id="emails" cols="70" rows="7"></textarea><br>							
+			<button type="submit" onclick = clicked() >Submit</button><br>
+		</form>
+		<b> I Am Assuming All The Data is Valid !</b>
+
+	</center>
+	</div>
+</body>
+</html>
